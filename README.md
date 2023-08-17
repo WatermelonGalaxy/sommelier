@@ -205,24 +205,25 @@ model = tf.keras.models.Sequential([
 ![Alt text](1DCNN-D.png)
 
 ### 1DCNN
-I got an accuaracy ~52%
+I got an accuaracy ~60%
 ``` python
 # create sequential model
 model = tf.keras.models.Sequential([
-    tf.keras.layers.Conv1D(11, 2, activation='relu', input_shape=X_train_d.shape[1:]),
+    tf.keras.layers.Conv1D(32, 3, activation='relu', input_shape=X_train_d.shape[1:]),
     tf.keras.layers.Flatten(),
-    tf.keras.layers.Dense(16, activation='relu'), # First Dense layer
+    tf.keras.layers.Dense(120, activation='relu'), # First Dense layer
     tf.keras.layers.Dropout(0.3), # First Dropout layer
     tf.keras.layers.BatchNormalization(), # First Batch normalization layer
-    tf.keras.layers.Dense(16, activation='relu'), # Second Dense layer
+    tf.keras.layers.Dense(120, activation='relu'), # Second Dense layer
     tf.keras.layers.Dropout(0.3), # Second Dropout layer
     tf.keras.layers.BatchNormalization(), # Second Batch normalization layer
-    tf.keras.layers.Dense(16, activation='relu'), # Third Dense layer
+    tf.keras.layers.Dense(120, activation='relu'), # Third Dense layer
     tf.keras.layers.Dropout(0.3), # Third Dropout layer
     tf.keras.layers.BatchNormalization(), # Third Batch normalization layer
-    tf.keras.layers.Dense(16, activation='relu'), # Fourth Dense layer
+    tf.keras.layers.Dense(120, activation='relu'), # Fourth Dense layer
     tf.keras.layers.Dense(10, activation='softmax')
 ])
+
 ```
 
 ![Alt text](1DCNN-Acc.png)
@@ -237,7 +238,7 @@ Model   | My Accuracy | Paper's Accuaracy
 DNN-D   | ~61%        | 81%
 DNN     | ~51%        | 82.5%
 1DCNN-D | ~62%        | 82%
-1DCNN   | ~52%        | 83%             
+1DCNN   | ~60%        | 83%             
 
 Traditional Models the Paper Compared Against:
 
